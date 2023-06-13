@@ -5,6 +5,7 @@ import { PeliculasComponent } from './component/peliculas/peliculas.component';
 import { SeriesComponent } from './component/series/series.component';
 import { IngresarComponent } from './component/ingresar/ingresar.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -17,6 +18,7 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ],
   exports: [
     InicioComponent,

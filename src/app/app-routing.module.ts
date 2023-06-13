@@ -23,7 +23,7 @@ const routes: Routes = [
     component: IngresarComponent
   },
   {
-    path: "xx",
+    path: "**",
     redirectTo: "inicio"
   },
 ];
