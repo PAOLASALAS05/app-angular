@@ -1,0 +1,5 @@
+.btn-selector{
+    background-color: #ee82ee;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    transform:scale(0,8);  
+}
