@@ -74,9 +74,9 @@ movies_series: MoviesSeries[] = [
 },
 ];
 
-filter: "Todos" | "peliculas" | "Series" ="Todos";
+filter: "Todos" | "movie" | "serie" = "Todos";
 
-changeFilter= (filtro: "Todos" | "peliculas" | "Series")=>{
+changeFilter(filtro: "Todos" | "movie" | "serie") {
  this.filter = filtro;
 }
 }

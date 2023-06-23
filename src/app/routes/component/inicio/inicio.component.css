@@ -3,3 +3,9 @@
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
     transform:scale(0,8);  
 }
+
+.card {
+    width: 20%;
+    margin-right: 2%;
+    margin-left: 2%;
+}
