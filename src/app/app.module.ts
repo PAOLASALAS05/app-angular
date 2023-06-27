@@ -8,7 +8,7 @@ import { LayoutModule } from './layout/layout.module';
 import { RoutesModule } from './routes/routes.module';
 import { FooterComponent } from './layout/component/footer/footer.component';
 import { HeaderComponent } from './layout/component/header/header.component';
-
+import { httpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +19,7 @@ import { HeaderComponent } from './layout/component/header/header.component';
     SharedModule,
     LayoutModule,
     RoutesModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
