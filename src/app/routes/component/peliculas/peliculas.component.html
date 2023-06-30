@@ -1,1 +1,18 @@
-<p>peliculas works!</p>
+<h5 style="font-size: 50px;">peliculas works!</h5>
+<input class="input-group" type="text" [(ngModel)]="consulta" (ngModelChange)="mostrarCambios()">
+
+<button class="btn" [ngClass]="consulta.length > 0 ? 'btn-primary' : 'btn-secondary'">
+    Enviar
+</button>
+
+<button class="btn" [ngStyle]="{'color': consulta.length > 0 ? 'blue' : 'gray'}">
+    Enviar
+</button>
+
+<div *ngIf="consulta.length> 5;else Esfalso">Mostrar si la consulta tiene más de 5 caracteres</div>
+<ng-template #Esfalso>Mostrar si la consulta tiene menos de 5 caracteres o es igual a 5</ng-template>
+
+<div [ngSwitch]="estaListo">
+    <span *ngSwitchCase="true">ESTÄ LISTO</span>
+    <span *ngSwitchCase="false">NO ESTÄ LISTO</span>
+</div>

@@ -5,27 +5,27 @@ import { PeliculasComponent } from './routes/component/peliculas/peliculas.compo
 import { SeriesComponent } from './routes/component/series/series.component';
 import { IngresarComponent } from './routes/component/ingresar/ingresar.component';
 
-const routes: Routes = [  
+const routes: Routes = [
   {
-    path: "inicio",
+    path: 'inicio',
     component: InicioComponent
   },
   {
-    path: "peluculas",
+    path: 'peliculas',
     component: PeliculasComponent
   },
   {
-    path: "series",
+    path: 'series',
     component: SeriesComponent
   },
   {
-    path: "ingresar",
+    path: 'ingresar',
     component: IngresarComponent
   },
   {
-    path: "**",
-    redirectTo: "inicio"
-  },
+    path: '**',
+    redirectTo: 'inicio'
+  }
 ];
 
 @NgModule({

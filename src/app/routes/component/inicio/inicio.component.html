@@ -1,57 +1,44 @@
-<section class="ay-5 mx-5 my-5 text-light">
-  <h1> PelisUP!</h1>
-  <h3> Plataforma para ver pelicuas y series 😉 </h3>
+<section class="my-5 mx-5">
+  <h1>PelisUP!</h1>
+  <h3>Plataforma para ver películas y series 😉</h3>
 </section>
-<section class="my-7 mx-5  ">
-  <div class="mb-3 input-group">
-    <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-search"></i></span>
-    <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="Buscar películas y series">
+<section class="my-3 mx-5">
+  <div class="mb-2 input-group">
+      <span class="input-group-text" id="inputGroupPrepend">
+          <i class="bi bi-search"></i>
+      </span>
+      <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="Buscar películas y series">
   </div>
 </section>
-<section>
-  <div class="mx-5 d-flex">
-    <div class="card-group">
+<section class="my-5 mx-5">
+  <div class="btn-group">
       <button class="btn btn-primary" [ngClass]="filter === 'Todos' ? 'btn-selected' : ''" 
-      role="button" (click)="changeFilter('Todos')">Todos</button>
+              role="button" (click)="changeFilter('Todos')" >Todos</button>
+
+      <button class="btn btn-primary" [ngClass]="filter === 'Peliculas' ? 'btn-selected' : ''"
+              role="button" (click)="changeFilter('Peliculas')">Películas</button>
+
+      <button class="btn btn-primary" [ngClass]="filter === 'Series' ? 'btn-selected' : ''"
+              role="button" (click)="changeFilter('Series')">Series</button>
     </div>
-    <div class="card-group">
-      <button class="btn btn-primary" [ngClass]="filter === 'movie' ? 'btn-selected' : ''" 
-      role="button" (click)="changeFilter('movie')">Peliculas</button>
-    </div>
-    <div class="card-group">
-      <button class="btn btn-primary" [ngClass]="filter === 'serie' ? 'btn-selected' : ''" 
-      role="button" (click)="changeFilter('serie')">Series</button>
-    </div>
+</section>
+<section class="my-5 mx-5">
+  <h2>Todos</h2>
+  <div class="container">
+      <div class="row" *ngIf="filter === 'Todos'">
+          <div class="col-3 m-2" *ngFor="let item of movies_series">
+              <app-movie-card [title]="item.title || item.name" [img]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + item.poster_path"></app-movie-card>
+          </div>
+      </div>
+      <div class="row" *ngIf="filter === 'Peliculas'">
+          <div class="col-3 m-2" *ngFor="let item of movies">
+              <app-movie-card [title]="item.title || item.name" [img]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + item.poster_path"></app-movie-card>
+          </div>
+      </div>
+      <div class="row" *ngIf="filter === 'Series'">
+          <div class="col-3 m-2" *ngFor="let item of series">
+              <app-movie-card [title]="item.title || item.name" [img]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + item.poster_path"></app-movie-card>
+          </div>
+      </div>
   </div>
 </section>
-<!-- <app-movie-card></app-movie-card> -->
-<div class="container-fluid">
-  <div class="row row-cols-1 row-cols-sm-4 g-3 ">
-    <div class="card" *ngFor="let movie of movies_series">
-      <div *ngIf="movie.category === 'movie' && filter === 'movie'">
-        <img [src]="movie.image" class="card-img-top" [alt]="movie.name">
-        <h2>{{movie.name}}</h2>
-        <div class="card-body">
-          <p class="card-text">{{movie.description}}</p>
-          <p class="card-text">RATING: {{movie.rating}}</p>
-        </div>
-      </div>
-      <div *ngIf="movie.category === 'serie' && filter === 'serie'">
-        <img [src]="movie.image" class="card-img-top" [alt]="movie.name">
-        <h2>{{movie.name}}</h2>
-        <div class="card-body">
-          <p class="card-text">{{movie.description}}</p>
-          <p class="card-text">RATING: {{movie.rating}}</p>
-        </div>
-      </div>
-      <div *ngIf="filter === 'Todos'">
-        <img [src]="movie.image" class="card-img-top" [alt]="movie.name">
-        <h2>{{movie.name}}</h2>
-        <div class="card-body">
-          <p class="card-text">{{movie.description}}</p>
-          <p class="card-text">RATING: {{movie.rating}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

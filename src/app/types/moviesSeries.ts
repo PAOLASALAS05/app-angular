@@ -4,5 +4,5 @@ export interface MoviesSeries {
     description: string,
     image: string,
     rating: string,
-    category: "movie" | "serie"
+    category: 'Movie' | 'Serie' 
 }

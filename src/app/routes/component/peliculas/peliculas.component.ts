@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class PeliculasComponent {
 
+  consulta: string = 'Consulta de prueba';
+
+  estaListo: boolean = false;
+
+  mostrarCambios = () => {
+    console.log('la variable consulta tiene:', this.consulta);
+    console.log('Cantidad de caracteres: ', this.consulta.length);
+  }
 }

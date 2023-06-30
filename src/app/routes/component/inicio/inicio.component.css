@@ -1,11 +1,11 @@
-.btn-selector{
-    background-color: #ee82ee;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-    transform:scale(0,8);  
+.input-group {
+    width: 350px;
 }
 
-.card {
-    width: 20%;
-    margin-right: 2%;
-    margin-left: 2%;
+.btn-selected {
+    background-color: blueviolet;
+    box-shadow: 5px 10px #888888;
+    transform: scale(1.2);
+    margin-left: 8px;
+    margin-right: 8px;
 }
