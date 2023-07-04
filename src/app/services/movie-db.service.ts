@@ -3,40 +3,37 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MovieDBService {
+  key: string =
+    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzI5ZGYxZDk3ZjRjYzFiZGFhNWI1MmMwMmQ3ZTAwOSIsInN1YiI6IjY0OWIzNjZkYWFkOWMyMDBhZTcwYzFlOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Vml0IS-VsCoD3q-fR9B-zZPC6yUOH1Y-LFTTHqjHIqI';
 
-  key: string = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzI5ZGYxZDk3ZjRjYzFiZGFhNWI1MmMwMmQ3ZTAwOSIsInN1YiI6IjY0OWIzNjZkYWFkOWMyMDBhZTcwYzFlOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Vml0IS-VsCoD3q-fR9B-zZPC6yUOH1Y-LFTTHqjHIqI';
+  baseURL: string = 'https://api.themoviedb.org/3';
 
-  baseURL: string = 'https://api.themoviedb.org/3/movie/11'
+  constructor(private _httpClient: HttpClient) {}
 
-  constructor(
-    private _httpClient : HttpClient
-  ) { }
-
-  getTrending() :Observable<any> {
+  getTrending(): Observable<any> {
     let headers = new HttpHeaders().set('Authorization', this.key);
 
     return this._httpClient.get(this.baseURL + '/trending/all/week', {
-      headers
-    })
+      headers,
+    });
   }
 
-  getMovies() :Observable<any> {
+  getMovies(): Observable<any> {
     let headers = new HttpHeaders().set('Authorization', this.key);
 
     return this._httpClient.get(this.baseURL + '/movie/popular', {
-      headers
-    })
+      headers,
+    });
   }
 
-  getSeries() :Observable<any> {
+  getSeries(): Observable<any> {
     let headers = new HttpHeaders().set('Authorization', this.key);
 
     return this._httpClient.get(this.baseURL + '/tv/popular', {
-      headers
-    })
+      headers,
+    });
   }
-
 }

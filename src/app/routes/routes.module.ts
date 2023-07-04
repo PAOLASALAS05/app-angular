@@ -4,10 +4,8 @@ import { InicioComponent } from './component/inicio/inicio.component';
 import { PeliculasComponent } from './component/peliculas/peliculas.component';
 import { SeriesComponent } from './component/series/series.component';
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IngresarComponent } from './component/ingresar/ingresar.component';
-
-
 
 @NgModule({
   declarations: [
@@ -15,13 +13,8 @@ import { IngresarComponent } from './component/ingresar/ingresar.component';
     PeliculasComponent,
     SeriesComponent,
     IngresarComponent,
-   
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    FormsModule,
-    ],
+  imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
   exports: [
     InicioComponent,
     PeliculasComponent,
@@ -29,4 +22,4 @@ import { IngresarComponent } from './component/ingresar/ingresar.component';
     IngresarComponent,
   ],
 })
-export class RoutesModule { }
+export class RoutesModule {}
