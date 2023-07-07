@@ -3,4 +3,8 @@
   <div class="card-body">
     <p class="card-text">{{title}}</p>
   </div>
+  <div class="card-footer">
+    <button *ngIf="estadoBoton" class="btn btn-outline-success" (click)="addMovie()">Agregar a mi lista</button>
+    <button *ngIf="!estadoBoton" class="btn btn-outline-danger" (click)="deleteMovie()">Eliminar de mi lista</button>
+  </div>
 </div>
