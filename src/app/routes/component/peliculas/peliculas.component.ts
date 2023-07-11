@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { MovieDBService } from 'src/app/services/movie-db.service';
 import { Movie } from 'src/app/types/Movies';
-import { MoviesSeries } from 'src/app/types/moviesSeries';
+
 @Component({
   selector: 'app-peliculas',
   templateUrl: './peliculas.component.html',

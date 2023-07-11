@@ -35,7 +35,11 @@ export class DashboardComponent {
   }
 
   obtenerSeries(){
-    // OBTENER SERIES DE FIRESTORE
+    this._firestoreService.getSerie().subscribe({
+      next: (response) => {
+        this.totalSeries = response.length;
+      }
+    })
   }
 
 }
