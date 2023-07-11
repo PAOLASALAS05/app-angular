@@ -19,6 +19,7 @@ export class DashboardComponent {
 
   ngOnInit(){
     this.obtenerPeliculas();
+    this.obtenerSeries();
   }
 
   redirectTo(ruta: string) {
@@ -31,6 +32,10 @@ export class DashboardComponent {
         this.totalPeliculas = response.length;
       }
     })
+  }
+
+  obtenerSeries(){
+    // OBTENER SERIES DE FIRESTORE
   }
 
 }
