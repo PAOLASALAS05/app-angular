@@ -1,20 +1,23 @@
-<section class="my-5 mx-5"> 
-<h1 style="font-size: 50px;">peliculas</h1>
-</section>
-<input class="input-group" type="text" [(ngModel)]="consulta" (ngModelChange)="mostrarCambios()">
+<section class="my-5 mx-5">
+    <h1>PelisUP!</h1>
+    <h3>Peliculas</h3>
+  </section>
+  <section class="my-3 mx-5">
+    <div class="mb-2 input-group">
+        <span class="input-group-text" id="inputGroupPrepend">
+            <i class="bi bi-search"></i>
+        </span>
+        <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="Buscar películas y series">
+    </div>
+  </section>
 
-<button class="btn" [ngClass]="consulta.length > 0 ? 'btn-primary' : 'btn-secondary'">
-    Enviar
-</button>
-
-<button class="btn" [ngStyle]="{'color': consulta.length > 0 ? 'blue' : 'gray'}">
-    Enviar
-</button>
-
-<div *ngIf="consulta.length> 5;else Esfalso">Mostrar si la consulta tiene más de 5 caracteres</div>
-<ng-template #Esfalso>Mostrar si la consulta tiene menos de 5 caracteres o es igual a 5</ng-template>
-
-<div [ngSwitch]="estaListo">
-    <span *ngSwitchCase="true">ESTÄ LISTO</span>
-    <span *ngSwitchCase="false">NO ESTÄ LISTO</span>
-</div>
+  <section class="my-5 mx-5">
+    <h2>Todos</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 m-2" *ngFor="let item of movies">
+                <app-movie-card [title]="item.title || item.name" [img]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + item.poster_path"></app-movie-card>
+            </div>
+        </div>
+    </div>
+  </section>
